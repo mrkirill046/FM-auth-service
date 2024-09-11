@@ -2,6 +2,7 @@ package com.qwy_games.fllaf_messenger.authservice.config;
 
 import com.qwy_games.fllaf_messenger.authservice.database.repositories.UserRepository;
 import io.github.cdimascio.dotenv.Dotenv;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,16 +14,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.security.AuthProvider;
-
 @Configuration
+@RequiredArgsConstructor
 public class AppConfig {
 
     private final UserRepository repository;
-
-    public AppConfig(UserRepository repository) {
-        this.repository = repository;
-    }
 
     @Bean
     public Dotenv dotenv() {

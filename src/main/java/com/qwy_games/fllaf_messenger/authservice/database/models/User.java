@@ -1,8 +1,11 @@
 package com.qwy_games.fllaf_messenger.authservice.database.models;
 
 import com.qwy_games.fllaf_messenger.authservice.database.enums.Role;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,9 +14,12 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+@Data
 @Builder
 @Entity
 @Table(name = "users")
+@NoArgsConstructor
+@AllArgsConstructor
 public class User implements UserDetails {
 
     @Id
